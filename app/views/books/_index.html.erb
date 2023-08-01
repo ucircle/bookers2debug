@@ -32,7 +32,7 @@
           <% end %>
         </td>
         <td>
-           <p>コメント数：<%= @book.book_comments.count %></p>
+           <p>コメント数：<span id="comment_count"><%= @book.book_comments.count %></span></p>
         </td>
       </tr>
     <% end %>
