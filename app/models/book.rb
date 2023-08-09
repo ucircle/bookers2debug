@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   belongs_to :user
   has_many :book_comments
   has_many :favorites
+  has_many :week_favorites, -> { where(created_at: 1.week.ago.beginning_of_day..time.current.end_of_day) }
   validates :title,presence:true
   validates :body,presence:true,length:{maximum:200}
   
